@@ -10,7 +10,7 @@ Note: Sns topic must be available to configure alarm action
 
 ```yaml
 module "cloudwatch_vpn_state" {
-  source                = "git::ssh://git@technetscloud/cloudwatch_vpn_state"
+  source                = "git::ssh://git@github.com:technetscloud/cloudwatch_vpn_state.git"
   alarm_name            = var.alarm_name
   alarm_description     = var.alarm_description
   comparison_operator   = var.comparison_operator
