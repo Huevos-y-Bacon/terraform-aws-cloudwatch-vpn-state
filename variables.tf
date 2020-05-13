@@ -26,7 +26,7 @@ variable "comparison_operator" {
 
 variable "evaluation_periods" {
   type        = number
-  default     = 1
+  default     = "1"
   description = "The number of periods over which data is compared to the specified threshold."
 }
 
@@ -66,20 +66,40 @@ variable "actions_enabled" {
   description = "Indicates whether or not actions should be executed during any changes to the alarm's state."
 }
 
-variable "alarm_actions" {
-  type        = list
-  default     = []
-  description = "The list of actions to execute when this alarm transitions into an alarm state from any other state"
-}
-
-variable "ok_actions" {
-  type        = list
-  default     = []
-  description = "The list of actions to execute when this alarm transitions into an OK state from any other state."
-}
+//variable "alarm_actions" {
+//  type        = list
+//  default     = ["aws_sns_topic.sns_topic.arn"]
+//  description = "The list of actions to execute when this alarm transitions into an alarm state from any other state"
+//}
+//
+//variable "ok_actions" {
+//  type        = list
+//  default     = ["aws_sns_topic.sns_topic.arn"]
+//  description = "The list of actions to execute when this alarm transitions into an OK state from any other state."
+//}
 
 variable "aws_vpn_connection_id" {
   type        = string
   default     = ""
   description = "VPN connection id to be monitored "
+}
+
+####
+# SNS Topic Variables
+####
+
+variable "sns_topic_name" {
+  type        = string
+  default     = "VpnTopic"
+  description = "Name of the sns topic"
+}
+variable "sns_topic_display_name" {
+  type        = string
+  default     = "VpnTopic"
+  description = "Display name of SNS topic"
+}
+variable "sns_topic_subscriber" {
+  type        = string
+  default     = ""
+  description = "Subscriber Email ID"
 }
