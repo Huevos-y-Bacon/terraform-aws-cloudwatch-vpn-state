@@ -4,7 +4,7 @@ A CloudWatch Alarm that triggers when the state of one or both tunnels in an AWS
 
 CloudWatch Alarm is configured per VPN connection, which is set as an alarm dimension. Provide the VPN Connection ID as a variable.
 
-This Module will create a cloudwatch alarm with AWS VPN and also create one SNS topic with email subscription. User will receive one email from aws for subscription confirmation.
+This Module will create a cloudwatch alarm with AWS VPN and also create one SNS topic with email subscription. You need to manually subscribe to the topic.
 
 ## How to use
 
@@ -25,6 +25,5 @@ module "cloudwatch_vpn_state" {
 
   sns_topic_name         = var.sns_topic_name
   sns_topic_display_name = var.sns_topic_display_name
-  sns_topic_subscriber   = var.sns_topic_subscriber
 }
 ```
