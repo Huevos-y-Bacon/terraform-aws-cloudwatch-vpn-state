@@ -98,8 +98,3 @@ variable "sns_topic_display_name" {
   default     = "VpnTopic"
   description = "Display name of SNS topic"
 }
-variable "sns_topic_subscriber" {
-  type        = string
-  default     = ""
-  description = "Subscriber Email ID"
-}
