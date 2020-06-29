@@ -30,8 +30,4 @@ resource "aws_sns_topic" "sns_topic" {
     Terraform = true
     Name      = var.sns_topic_name
   }
-  #The provisioner that calls the AWS CLI command does not use the credentials in TF - it uses the ones configured against your CLI.
-  provisioner "local-exec" {
-    command = "aws sns subscribe --topic-arn ${self.arn} --protocol email --notification-endpoint ${var.sns_topic_subscriber}"
-  }
 }
