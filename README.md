@@ -10,7 +10,7 @@ This Module will create a cloudwatch alarm with AWS VPN and also create one SNS 
 
 ```yaml
 module "cloudwatch_vpn_state" {
-  source                = "git::ssh://git@github.com:jobin-james/cloudwatch_vpn_state.git?ref=master"
+  source                = "git::ssh://git@github.com:jobin-james/terraform-aws-cloudwatch-vpn-state.git?ref=master"
   alarm_name            = var.alarm_name
   alarm_description     = var.alarm_description
   comparison_operator   = var.comparison_operator
